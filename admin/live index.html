@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML> 
+  <HEAD> 
+	 <TITLE>Tarot Master Admin Panel by Emogic</TITLE>
+	 <LINK HREF="../../../tarotmaster2/css/jquery-ui-1.10.3.custom.css"
+	  REL="stylesheet"><LINK HREF="../../../tarotmaster2/css/tarotmaster.css"
+	 REL="stylesheet"> <SCRIPT SRC="../../../tarotmaster2/js/jquery.js">//jquery
+	core</SCRIPT> <SCRIPT SRC="../../../tarotmaster2/js/jquery-ui.js">//jquery ui</SCRIPT> <STYLE TYPE="text/css">
+  #CardUL { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+  #CardUL li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 0; font-size: 1.4em; height: 18px; }
+  #CardUL li span { position: absolute; margin-left: -1.3em; }
+  </STYLE> <STYLE TYPE="text/css"> 
+#CardUL3 { list-style-type: none; margin: 0; padding: 0; width: 450px; }
+#CardUL3 li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+ </STYLE> 
+  </HEAD> 
+  <BODY> <SCRIPT LANGUAGE="javascript" TYPE="text/javascript">
+var step1 = "Enter the name you want displayed in the chat box";
+var step2 = "Querent name.\rThis will replace the token <??> in the card descriptions.";
+var step3 = "Session code.\rThis should be a unique code that will allow only those you want, to join your reading.\rYou can give a single reading to one or more people or you can give multiple simulations readings to one or more people.";
+var step4 = "Create Session.\rBy clicking create session, you create a folder and files that allow you to do a reading.\rWhen done, you can delete that session.";
+var step5 = "Client URL.\rClick on the Client Page link to see what the client will see.\rCopy the URL link from the browser address bar and email it or read it of to your client so they may join the reading.\rIf they already have a link to the output page (eg http://www.emogic.com/tarotmaster2/output/) then they can just type in the code you give them on that page.";
+var step6 = "You may text chat, talk over the phone or skype as desired.\rYou may also adjust the size sliders to suite the clients screen resolution.\rYou can also quickly adjust the card table size by clicking and dragging the lower right corner handle."; 
+var step7 = "Choose a spread template underlay if desired.\rIt will resize when you resize the card table. It can be more or less visible depending on the Card Table Opacity slider.\rIt is easy to add your own. Just upload a template image and add a html select option to the index.html file.";
+var step8 = "Choose a deck\rIf you have multiple deck databases (we provide two), you can choose the deck here.";
+var step9 = "You can now choose the card you want to show (if you are using a real deck) or click the Random Card button.\rYou can edit the card description if the default one from the database is not suitable.\rThis change is temporary and does not modify the database.";
+var step10 = "At this point you should edit the top line in the card display.\rIt represents the spread position or description. Eg: Future card.\rYou can right click to turn the card over before dragging it on to the card table.\rSome may like to lay them down in the spread face down first and then turn them over as desired.\rYou can also show or hide the card description.\rDrag the card to the table for the client to see it.\rCards can be removed from the table by right clicking on them.";
+</SCRIPT> 
+	 <DIV>Comments, bugs or question directed to:
+		<A HREF="mailto:vpelss@emogic.com?subject=TarotMaster2"
+		 TARGET="_blank">vpelss@emogic.com</A> </DIV> 
+	 <DIV ID="step1" TITLE="Your Chat Display Name">Enter the name you want
+		displayed in the chat box.</DIV><SCRIPT>$( '#step1' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV ID="step2" TITLE="Querent Name">This will replace the token <%custom%>
+		in the card descriptions.</DIV><SCRIPT>$( '#step2' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV ID="step3" TITLE="Session code">This should be a unique code that will
+		allow only those you want, to join your reading. You can give a single reading
+		to one or more people or you can give multiple simulations readings to one or
+		more people.</DIV><SCRIPT>$( '#step3' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV ID="step4" TITLE="Create Session">By clicking create session, you
+		create a folder and files that allow you to do a reading. When done, you can
+		delete that session.</DIV><SCRIPT>$( '#step4' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV ID="step5" TITLE="Client URL">Click on the Client Page link to see
+		what the client will see.Copy the URL link from the browser address bar and
+		email it or read it of to your client so they may join the reading.If they
+		already have a link to the output page (eg
+		http://www.emogic.com/tarotmaster2/output/) then they can just type in the code
+		you give them on that page.</DIV><SCRIPT>$( '#step5' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV ID="step6" TITLE="Chat">You may text chat, talk over the phone or
+		skype as desired. You may also adjust the size sliders to suite the clients
+		screen resolution. You can also quickly adjust the card table size by clicking
+		and dragging the lower right corner handle.</DIV><SCRIPT>$( '#step6' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV ID="step7" TITLE="Spread Template Underlay">Choose a spread template
+		underlay if desired. It will resize when you resize the card table. It can be
+		more or less visible depending on the Card Table Opacity slider. It is easy to
+		add your own. Just upload a template image and add a html select option to the
+		index.html file.</DIV><SCRIPT>$( '#step7' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV ID="step8" TITLE="Choose a Deck">"If you have multiple deck databases
+		(we provide two), you can choose the deck here.</DIV><SCRIPT>$( '#step8' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV ID="step9" TITLE="Choose a Card">You can now choose the card you want
+		to show (if you are using a real deck) or click the Random Card button. You can
+		edit the card description if the default one from the database is not suitable.
+		This change is temporary and does not modify the database.</DIV><SCRIPT>$( '#step9' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV ID="step10" TITLE="Spread Position - Lay Card">At this point you
+		should edit the top line in the card display. It represents the spread position
+		or description. Eg: Future card. You can right click to turn the card over
+		before dragging it on to the card table. Some may like to lay them down in the
+		spread face down first and then turn them over as desired. You can also show or
+		hide the card description. Drag the card to the table for the client to see it.
+		Cards can be removed from the table by right clicking on them.</DIV><SCRIPT>$( '#step10' ).dialog({autoOpen: false , modal: true});</SCRIPT> 
+	 <DIV CLASS="accordion"> 
+		<H5>Instructions - click to show or hide</H5> 
+		<DIV> 
+		  <P><B><FONT COLOR="#CC0000">Click on the step links for more
+			 help.</FONT></B></P> 
+		  <DIV CLASS="instruct"><B><A HREF="#" TITLE="Step 1."
+			 ONCLICK='$( "#step1" ).dialog( "open" );'>Step 1.</A></B> Your name: 
+			 <FORM STYLE="display:inline"><INPUT TYPE="TEXT" NAME="chatname"
+				ID="chatname" VALUE="Tarot Guide"
+				ONCHANGE="send_chat(oldname + ' is now known as ' + document.getElementById('chatname').value); "
+				SIZE="10"></FORM></DIV> 
+		  <DIV CLASS="instruct"><B><A HREF="#" TITLE="Step 2."
+			 ONCLICK='$( "#step2" ).dialog( "open" );'>Step 2.</A></B> Querent name: 
+			 <FORM STYLE="display:inline"><INPUT TYPE="TEXT" NAME="Text2"
+				ID="studentname" VALUE="Querent" SIZE="10"></FORM></DIV> 
+		  <DIV CLASS="instruct"><B><A HREF="#" TITLE="Step 3."
+			 ONCLICK='$( "#step3" ).dialog( "open" );'>Step 3.</A></B> Session code: 
+			 <FORM STYLE="display:inline"><INPUT TYPE="TEXT" NAME="Text1"
+				VALUE="RandomTextHere" ID="sessioncode" SIZE="10"> </FORM></DIV> 
+		  <DIV CLASS="instruct"><B><A HREF="#" TITLE="Step 4."
+			 ONCLICK='$( "#step4" ).dialog( "open" );'>Step 4.</A></B> 
+			 <FORM STYLE="display:inline"><INPUT TYPE="BUTTON" NAME="Button3"
+				VALUE="Create Session" ID="CreateSession"></FORM> or 
+			 <FORM STYLE="display:inline"><INPUT TYPE="BUTTON" NAME="Button3"
+				VALUE="Delete Session" ID="DeleteSession"></FORM></DIV> 
+		  <DIV CLASS="instruct"><B><A HREF="#" TITLE="Step 5."
+			 ONCLICK='$( "#step5" ).dialog( "open" );'>Step 5.</A></B> Send URL link to the
+			 client:
+			 <A TARGET="_blank" HREF="/tarotmaster2/output/" ID="studentlink"
+			 ONMOUSEOVER="this.href = outputpath + '/?sessioncode=' + document.getElementById('sessioncode').value;">Client's
+			 Page</A></DIV> 
+		  <DIV CLASS="instruct"></DIV> </DIV></DIV> 
+	 <DIV><B><A HREF="#" TITLE="Step 6."
+		ONCLICK='$( "#step6" ).dialog( "open" );'>Step 6.</A></B></DIV> <SCRIPT>
+  $(function() {
+    $( ".accordion" ).accordion({
+      collapsible: true
+    });
+  });
+  </SCRIPT> 
+	 <DIV CLASS="ui-widget-content accordion" ID="metachat"><!--Must be outside of table or IE 6 or 7 will not refresh!!!-->
+		<H5>Chat - click to show or hide</H5> 
+		<DIV> 
+		  <DIV ID="chatbox"><!--Chat Box--></DIV> 
+		  <FORM>
+			 <INPUT TYPE="TEXT" ID="chatline"
+			 ONKEYPRESS="if (event.keyCode == 13){send_chat(document.getElementById('chatline').value);return false;};"
+			 ONFOCUS="CurrentFocus='';//send keystrokes to bit bucket" STYLE="width: 80%;">
+			 <INPUT TYPE="SUBMIT"
+			 ONCLICK="send_chat(document.getElementById('chatline').value);return false;"
+			 VALUE="Send Text">
+			 <INPUT TYPE="BUTTON" NAME="Button2" VALUE="Alert"
+			 ONCLICK="alert('To alert someone, type ‘alert name’ in the chat box');">
+			 </FORM></DIV> </DIV> 
+	 <DIV ID="sliderBox" ALIGN="LEFT"><FONT SIZE="-1" COLOR="#CC0000"><B>Card
+		Width - <I>adjust slider</I></B></FONT><!--Box Slider--></DIV> 
+	 <DIV ID="sliderText"><FONT SIZE="-1" COLOR="#CC0000"><B>Font Size -
+		<I>adjust slider</I></B></FONT><!--Text Slider--></DIV> 
+	 <DIV ID="sliderWidth"><FONT SIZE="-1" COLOR="#CC0000"><B>Table Width -
+		<I>adjust slider</I></B></FONT><!--Width Slider--></DIV> 
+	 <DIV ID="sliderHeight"><FONT SIZE="-1" COLOR="#CC0000"><B>Table Height -
+		<I>adjust slider</I></B></FONT><!--Height Slider--></DIV> 
+	 <DIV ID="cardTableOpacity"><FONT SIZE="-1" COLOR="#CC0000"><B>Card Table
+		Opacity - <I>adjust slider</I></B></FONT><!--Height Slider--></DIV> 
+	 <TABLE CELLPADDING="5" CELLSPACING="0" WIDTH="100%"> 
+		<TR> 
+		  <TD WIDTH="10%" VALIGN="TOP" COLSPAN="2"> 
+			 <TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0"> 
+				<TR> 
+				  <TD> 
+					 <FORM> 
+						<DIV STYLE="display: inline"><B><A HREF="#" TITLE="Step 7."
+						  ONCLICK='$( "#step7" ).dialog( "open" );'>Step 7.</A></B> Choose a spread
+						  template </DIV> 
+						<DIV STYLE="display: inline"> 
+						  <SELECT NAME="spreaddropdown" SIZE="1" ID="spreaddropdown"
+						  ONCHANGE="document.getElementById('SpreadImage').src = this.value;"> 
+							 <OPTION VALUE="a" SELECTED="SELECTED">None. I am a
+								seasoned Tarot Reader</OPTION> 
+							 <OPTION VALUE="PastPresentFuture.jpg">Past Present
+								Future</OPTION> 
+							 <OPTION VALUE="CelticCross.jpg">Celtic Cross</OPTION> 
+							 <OPTION VALUE="Relationship.jpg">Relationship</OPTION> 
+						  </SELECT></DIV></FORM></TD> 
+				  <TD> 
+					 <FORM> 
+						<DIV STYLE="display: inline"> <B><A HREF="#" TITLE="Step 8."
+						  ONCLICK='$( "#step8" ).dialog( "open" );'>Step 8.</A></B> Choose Deck. Deck:
+						  </DIV> 
+						<SELECT NAME="cardDeck" SIZE="1" ID="cardDeck"> 
+						  <OPTION VALUE="../../../tarotmaster2/databases/emogic.cgi"
+						  SELECTED="SELECTED">Emogic's</OPTION> 
+						  <OPTION
+						  VALUE="../../../tarotmaster2/databases/leila.cgi">Leila</OPTION> 
+						</SELECT></FORM></TD> 
+				</TR> 
+			 </TABLE></TD> 
+		</TR> 
+		<TR> 
+		  <TD WIDTH="10%" VALIGN="TOP"> 
+			 <TABLE CELLPADDING="5" CELLSPACING="0"> 
+				<TR> 
+				  <TD> 
+					 <FORM> 
+						<DIV STYLE="display: inline"> <B><A HREF="#" TITLE="Step 9."
+						  ONCLICK='$( "#step9" ).dialog( "open" );'>Step 9.</A></B> Edit card
+						  description</DIV> 
+						<DIV>Card: 
+						  <SELECT NAME="CardDropdown" SIZE="1" ID="CardDropdown"> 
+							 <OPTION>Item 1</OPTION> 
+						  </SELECT><BR><TEXTAREA NAME="CardMultiText" ROWS="8" COLS="24" ID="CardMultiText" ONCHANGE="return true;//required for visual update"></TEXTAREA><INPUT TYPE="BUTTON" NAME="Button1"
+						  VALUE="Random Card" ID="RandomButton"></DIV></FORM> </TD> 
+				</TR> 
+				<TR> 
+				  <TD> 
+					 <DIV><B><A HREF="#" TITLE="Step 10."
+						ONCLICK='$( "#step10" ).dialog( "open" );'>Step 10.</A></B> <FONT
+						SIZE="-1">Edit spread position text for card. <I>Right Click for Options.</I>
+						Drag card to table.</FONT></DIV> <BR> 
+					 <DIV ID="StageArea"> 
+						<DIV ID="CardStage"> 
+						  <FORM ONSUBMIT="return false;"><INPUT TYPE="TEXT"
+							 NAME="Text3"
+							 STYLE="width: 100%; font-size: 1em; border-top: 1pt #F6F6F6 inset; background-color: transparent; border-right: 1pt #F6F6F6 inset; border-bottom: 1pt #F6F6F6 inset; border-left: 1pt #F6F6F6 inset"
+							 VALUE="The Future" ONKEYUP="this.setAttribute('value' , this.value);"></FORM> 
+						  <DIV ID="CardTitle">Card Title</DIV><BR> 
+						  <CENTER><IMG SRC="../../../tarotmaster2/images/back.jpg"
+							 BORDER="0" ID="CardImage" WIDTH="100%"></CENTER><BR> 
+						  <DIV ID="CardBlurb" CLASS="blurbs">Card Blurb</DIV></DIV>
+						</DIV> </TD> 
+				</TR> 
+				<TR> 
+				  <TD>&nbsp; </TD> 
+				</TR> 
+			 </TABLE></TD> 
+		  <TD VALIGN="TOP"> 
+			 <DIV ID="MetaTable">
+				<IMG ID="SpreadImage" SRC="" STYLE="position:absolute;"> 
+				<DIV ID="cardTable" STYLE="opacity: 0.85;"
+				CLASS="ui-widget-content">Card Table<!--Admin Card Table--></DIV> </DIV></TD> 
+		</TR> 
+	 </TABLE> 
+	 <TABLE ID="dialog"> 
+		<TR> 
+		  <TD><A ID="FlipMe" HREF="#">Flip Card</A></TD> 
+		</TR> 
+		<TR> 
+		  <TD><A ID="ToggleDescription" HREF="#">Hide/Show Description</A></TD> 
+		</TR> 
+		<TR> 
+		  <TD><A HREF="#" ID="CloseMe">Remove Card</A></TD> 
+		</TR> 
+	 </TABLE> <SCRIPT>
+//chat vars
+var chatcgi = '/cgi/tarotmaster2/chat.cgi';
+var outputpath = '/tarotmaster2/output';
+var chatfilename = 'chat.txt';
+var admindir = '/cgi/tarotmaster2/admin';
+
+var fontdivided = 5; //bigger number smaller font. note the slider value runs from 0 - 100
+var cardwidth = 1.25; //bigger number bigger width. note the slider value runs from 0 - 100
+var cardbackpath = '/tarotmaster2/images/back.jpg';
+var tableheightmultiplier = 20; //note the slider value runs from 0 - 100
+var tablewidthmultiplier = 20; //note the slider value runs from 0 - 100
+var sessioncode = document.getElementById("sessioncode").value;
+</SCRIPT> <SCRIPT TYPE="text/javascript" SRC="/tarotmaster2/cookie.js">
+//cookie code
+</SCRIPT> <SCRIPT TYPE="text/javascript" SRC="/tarotmaster2/chat.js">
+//chat code
+</SCRIPT><SCRIPT SRC="/tarotmaster2/tarotmaster.js">
+//tarotmaster code
+</SCRIPT> </BODY>
+</HTML>
