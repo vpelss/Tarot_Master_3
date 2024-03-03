@@ -1,5 +1,5 @@
 #line for obfuscator
 
-$chattextpath = "../../tarotmaster3/output";
+$chattextpath = "../output";
 $chatfilename = 'chat.txt';
 $chatlinelength = 200;
